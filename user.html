@@ -1,0 +1,22 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Panel</title>
+</head>
+<body>
+    <h1>Check Attendance</h1>
+    <input id="roll" placeholder="Enter Roll Number">
+    <button onclick="check()">Check</button>
+    <p id="result"></p>
+
+    <script>
+    function check() {
+        let r = document.getElementById("roll").value;
+        let a = localStorage.getItem(r);
+        document.getElementById("result").innerHTML =
+            a || "Attendance not found";
+    }
+    </script>
+</body>
+</html>

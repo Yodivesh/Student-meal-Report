@@ -1,0 +1,28 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Panel</title>
+</head>
+<body>
+    <h1>Admin Panel</h1>
+    <input id="name" placeholder="Student Name">
+    <input id="roll" placeholder="Roll Number">
+    <button onclick="mark()">Mark Present</button>
+    <p id="msg"></p>
+
+    <script>
+    function mark() {
+        let n = document.getElementById("name").value;
+        let r = document.getElementById("roll").value;
+        if(n==="" || r==="") {
+            alert("Enter all details");
+            return;
+        }
+        localStorage.setItem(r, n + " - Present");
+        document.getElementById("msg").innerHTML =
+            "Attendance marked for " + n;
+    }
+    </script>
+</body>
+</html>
